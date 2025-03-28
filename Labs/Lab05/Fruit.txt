@@ -1,0 +1,12 @@
+10
+Bananas   16
+Grapes    20
+Peaches   8
+Apples    3
+Kiwi      5
+Oranges   13
+Pears     6
+Lemons    1
+Limes     1
+Cherries  10
+

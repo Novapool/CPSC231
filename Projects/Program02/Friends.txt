@@ -1,0 +1,6 @@
+1163	Josh Hall        32	3.85
+8610	Gary Smith       28	4.00
+1147	Brian Taylor     36	2.52
+1132	Mark Bowman      56	3.80
+6798	Kent Gleason     62	2.70
+8546	Robert Haney     33	3.14

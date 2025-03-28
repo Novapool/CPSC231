@@ -1,0 +1,7 @@
+6
+Books	    8
+Pens        2
+Eraser      1
+Paper       40
+Pencils     5
+Calculator  1

@@ -1,0 +1,10 @@
+2487	Ann Christensen  70	3.71
+6706	Carlos Morales   68	3.50
+4732	David Bowman     45	3.03
+9440	Frank Bowman     37	4.00
+2635	John Bowman      30	2.63
+7390	Kathleen Gueller 34	1.86
+1132	Mark Bowman      42	2.50
+7166	Mark Bowman      13	4.00
+3333	Richard Bowman   47	3.96
+9636	Susan Cox        36	3.89

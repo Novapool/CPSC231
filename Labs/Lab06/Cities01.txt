@@ -1,0 +1,10 @@
+Lansing 42.73 -84.55
+Detroit 42.33 -83.04
+Flint 43.01 -83.68
+Grand-Rapids 42.96 -85.66
+Jackson 42.27 -84.47
+Kalamazoo 42.23 -85.55
+Ann-Arbor 42.22 -83.75
+Mt-Pleasant 43.60 -84.78
+Clare 43.82 -84.77
+Saginaw 43.42 -83.95
