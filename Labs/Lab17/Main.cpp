@@ -22,21 +22,21 @@ int main()
 
   root = build_tree();
 
-/* PART 1
+/* PART 1*/
 // Display tree
 
   cout << "Entire Tree" << endl;
   if(root!=NULL) root->lmr();
   cout << endl << endl;
-*/
 
-/* PART 2
+
+/* PART 2 */
 // Display leaves
 
   cout << "Leaves" << endl;
   root->leaves();
   cout << endl << endl;
-*/
+
 
 /* PART 3
 // Display leaves and depth
