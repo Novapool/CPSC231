@@ -16,11 +16,11 @@ using namespace std;
  ************************************/
 void node::lmr()
 { 
-    if(left!=NULL) left->lmr(); // Left
+    if(left!=NULL) left->lmr();              // Left
 
-    cout << val << " ";       // Middle
+    cout << val << " ";                      // Middle
 
-    if(right!=NULL) right->lmr(); // Right
+    if(right!=NULL) right->lmr();            // Right
 }
 
 /************************************
@@ -29,11 +29,26 @@ void node::lmr()
  ************************************/
 void node::leaves()
 { 
-    if(left==NULL && right==NULL) // Leaf
+    if(left==NULL && right==NULL)             // Leaf
         cout << val << " ";
     else
     { 
-        if(left!=NULL) left->leaves(); // Left
-        if(right!=NULL) right->leaves(); // Right
+        if(left!=NULL) left->leaves();        // Left
+        if(right!=NULL) right->leaves();      // Right
+    }
+}
+
+/************************************
+ * Node leaves(int)
+ * Display leaves and depth
+ ************************************/
+void node::leaves(int depth)
+{ 
+    if(left==NULL && right==NULL)                 // Leaf
+        cout << setw(5) << val << setw(5) << depth << endl;
+    else
+    { 
+        if(left!=NULL) left->leaves(depth+1);     // Left
+        if(right!=NULL) right->leaves(depth+1);   // Right
     }
 }

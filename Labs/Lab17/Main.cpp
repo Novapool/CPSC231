@@ -38,14 +38,14 @@ int main()
   cout << endl << endl;
 
 
-/* PART 3
+/* PART 3 */
 // Display leaves and depth
 
   cout << "Leaf   Depth" << endl;
   cout << "-----  -----" << endl;
   root->leaves(0);
   cout << endl;
-*/
+
 
 // Clean up
 
