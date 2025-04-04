@@ -10,6 +10,7 @@
  #include <iostream>
  #include <string>
  #include "Node.h"
+ using namespace std;
  
  class tree
  {
@@ -25,13 +26,13 @@
      ~tree();
  
      // Insert a new value into the tree
-     void insert(std::string s);
+     void insert(string s);
  
      // Display all the values in the specified order
-     void show(std::string order, std::ostream& out);
+     void show(string order, ostream& out);
  
      // Return true/false if the string is found in the tree
-     bool find(std::string s);
+     bool find(string s);
  };
  
  #endif // TREE_H
