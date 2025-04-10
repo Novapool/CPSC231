@@ -1,7 +1,7 @@
 /************************************
  * Lab19.cpp
  * Merge Sort Implementation
- * Updated by YOUR NAME GOES HERE
+ * Updated by Laith Assaf
  ************************************/
 
  #include <iostream>
@@ -59,6 +59,8 @@
   ************************************/
  void merge_sort(string map[], int n)
  {
+     // Temporary array for merging
+     string temp[ARRAY_MAX]; 
      // Base case: if array has 1 or fewer elements, it's already sorted
      if(n <= 1)
          return;
@@ -92,43 +94,50 @@
   * Program entry point
   ************************************/
  int main()
- {
-     int i, n;                  // Loop counter and array size
-     string map[ARRAY_MAX];     // Array to hold strings
-     string fname;              // File name
-     fstream infile;            // File handle
+ {   int i, n;                  
+     string map[ARRAY_MAX];     
+     string fname;              
+     fstream infile;            
      
-     // Initialize
+    // Initialize
+
      n = 0;
      
-     // Open file
+    // Open file
+
      cout << "Enter data file name: ";
      cin >> fname;
      infile.open(fname.data(), ios::in);
      if(!infile.is_open())
          return -1;
      
-     // Loop through file
+    // Loop through file
+
      while(!infile.eof())
      {
          infile >> map[n];
          
-         // Update index if valid input
+    // Update index if valid input
+
          if(infile.good())
              n++;
      }
      
-     // Close file
+    // Close file
+
      infile.close();
      
-     // Sort the array
+    // Sort the array
+
      merge_sort(map, n);
      
-     // Output sorted map
+    // Output map
+    
      cout << endl;
      for(i = 0; i < n; i++)
          cout << map[i] << endl;
      
-     // Success
+    // Success
+
      return 0;
  }
