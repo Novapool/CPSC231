@@ -28,11 +28,20 @@
      // Insert a new value into the tree
      void insert(string s);
  
-     // Display all the values in the specified order
+     // Display all the values in the specified order (LMR, MLR, or RML)
      void show(string order, ostream& out);
  
      // Return true/false if the string is found in the tree
      bool find(string s);
+     
+     // Remove a value from the tree, return true/false if successful
+     bool remove(string s);
+     
+     // Return the maximum depth from the root to a leaf node
+     int depth();
+     
+     // Return the total count of nodes in the tree
+     int count();
  };
  
  #endif // TREE_H

@@ -26,17 +26,29 @@
      node* Right;
  
  public:
-     // Constructor: Create an empty node
+     // Constructor: Create a new node with the given value
      node(string s);
  
      // Destructor: Delete all children of this node
      ~node();
  
-     // Output the value
+     // Output the value to the specified stream
      void put(ostream& out);
  
-     // Output the current node and all children values in LMR order
+     // Output the current node and all children values in LMR order (inorder)
      void LMR(ostream& out);
+     
+     // Output the current node and all children values in MLR order (preorder)
+     void MLR(ostream& out);
+     
+     // Output the current node and all children values in RML order (reverse preorder)
+     void RML(ostream& out);
+     
+     // Return the maximum depth from this node to a leaf node
+     int depth();
+     
+     // Count the number of nodes in this subtree (including this node)
+     int count();
  
      // Declare the tree class as a friend to allow access to private members
      friend class tree;
