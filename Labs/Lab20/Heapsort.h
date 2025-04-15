@@ -1,6 +1,6 @@
 /************************************
  * Heapsort.h
- * Written by YOUR NAME GOES HERE
+ * Written by Laith Assaf
  ************************************/
 
 #include <iostream>
