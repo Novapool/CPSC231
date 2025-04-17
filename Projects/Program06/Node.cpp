@@ -108,22 +108,19 @@
  ***********************************/
 int node::depth()
 {
-    int leftDepth = -1;      // Initialize to -1 for edge counting
-    int rightDepth = -1;     // Initialize to -1 for edge counting
+    int leftDepth = 0;      // Initialize to 0 for leaf nodes
+    int rightDepth = 0;     // Initialize to 0 for leaf nodes
     
     // Calculate depth of left subtree if it exists
     if (Left != nullptr)
-        leftDepth = Left->depth();
+        leftDepth = Left->depth() + 1;  // Add 1 for this edge
     
     // Calculate depth of right subtree if it exists
     if (Right != nullptr)
-        rightDepth = Right->depth();
+        rightDepth = Right->depth() + 1;  // Add 1 for this edge
     
-    // Return the maximum of left and right depths, plus 1 for edge to this node
-    if (leftDepth > rightDepth)
-        return leftDepth + 1;
-    else
-        return rightDepth + 1;
+    // Return the maximum of left and right depths
+    return (leftDepth > rightDepth) ? leftDepth : rightDepth;
 }
  
  /***********************************
