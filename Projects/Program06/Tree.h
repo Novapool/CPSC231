@@ -38,10 +38,10 @@
      bool remove(string s);
      
      // Return the maximum depth from the root to a leaf node
-     int depth();
+     void depth();
      
      // Return the total count of nodes in the tree
-     int count();
+     void count();
  };
  
  #endif // TREE_H

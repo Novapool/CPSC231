@@ -94,8 +94,10 @@
      // Output count and depth
      out << endl << endl;
      
-     out << "Count: " << count() << endl;
-     out << "Depth: " << depth() << endl;
+     count();
+     out << endl;
+     depth();
+     out << endl;
  }
  
  /***********************************
@@ -216,25 +218,21 @@
   * depth
   * Return the maximum depth from the root to a leaf node
   ***********************************/
- int tree::depth()
+ void tree::depth()
  {
-     // If tree is empty, return 0
      if (Root == nullptr)
-         return 0;
-     
-     // Call the depth function on the root node
-     return Root->depth();
+         cout << "Depth: 0";
+     else
+         cout << "Depth: " << Root->depth();
  }
- /***********************************
+/***********************************
   * count
   * Return the total count of nodes in the tree
   ***********************************/
- int tree::count()
+ void tree::count()
  {
-     // If tree is empty, return 0
      if (Root == nullptr)
-         return 0;
-     
-     // Call the count function on the root node
-     return Root->count();
+         cout << "Count: 0";
+     else
+         cout << "Count: " << Root->count();
  }

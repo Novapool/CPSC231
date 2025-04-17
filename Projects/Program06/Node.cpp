@@ -104,42 +104,38 @@
 
 /***********************************
  * depth
- * Return the maximum depth from this node to a leaf node
- * (counting edges, not nodes)
+ * find the max depth starting from this node
  ***********************************/
 int node::depth()
 {
-    int leftDepth = 0;      // Initialize to 0 for leaf nodes
-    int rightDepth = 0;     // Initialize to 0 for leaf nodes
-    
-    // Calculate depth of left subtree if it exists
+    int leftBranch = 0;
+    int rightBranch = 0;
+
+    if (Left == nullptr && Right == nullptr)  // for no children
+        return 0;
+
+    // go down entire tree
     if (Left != nullptr)
-        leftDepth = Left->depth() + 1;  // Add 1 for this edge
-    
-    // Calculate depth of right subtree if it exists
+        leftBranch = Left->depth();
     if (Right != nullptr)
-        rightDepth = Right->depth() + 1;  // Add 1 for this edge
-    
-    // Return the maximum of left and right depths
-    return (leftDepth > rightDepth) ? leftDepth : rightDepth;
+        rightBranch = Right->depth();
+
+    return 1 + max(leftBranch, rightBranch);
 }
 
 /***********************************
  * count
- * Count the number of nodes in this subtree (including this node)
+ * return the total number of nodes in the tree
  ***********************************/
 int node::count()
 {
-    int total = 1;           // Start with 1 for this node
-    
-    // Add count of left subtree if it exists
-    if (Left != nullptr)
-        total += Left->count();
-    
-    // Add count of right subtree if it exists
+    int count = 1;
+
+    // go down entire tree and add one for each node
     if (Right != nullptr)
-        total += Right->count();
-    
-    // Return the total count
-    return total;
+        count += Right->count();
+    if (Left != nullptr)
+        count += Left->count();
+
+    return count;
 }
