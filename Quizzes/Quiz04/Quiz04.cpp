@@ -16,12 +16,14 @@
   **********************************/
  void tree::insert(int val)
  { 
-   // If tree is empty, create a new root
-   if(root == NULL)
-     root = new node(val);
-   else
-     // Otherwise, delegate to the node's insert function
-     root->insert(val);
+     // If tree is empty, create a new root
+     
+     if(root == NULL)
+         root = new node(val);
+     else
+         // Otherwise, delegate to the node's insert function
+         
+         root->insert(val);
  }
  
  /**********************************
@@ -30,33 +32,36 @@
   **********************************/
  void node::insert(int val)
  { 
-   int leftSum = 0;
-   int rightSum = 0;
-   
-   // Calculate sum of left subtree
-   if(left != NULL)
-     leftSum = left->sum();
-   
-   // Calculate sum of right subtree
-   if(right != NULL)
-     rightSum = right->sum();
-   
-   // Add to left if it's empty or has a smaller sum (ties go to left)
-   if(left == NULL || leftSum <= rightSum)
-   { 
-     if(left == NULL)
-       left = new node(val);
+     int leftSum = 0;
+     int rightSum = 0;
+     
+     // Calculate sum of left subtree
+     
+     if(left != NULL)
+         leftSum = left->sum();
+     
+     // Calculate sum of right subtree
+     
+     if(right != NULL)
+         rightSum = right->sum();
+     
+     // Add to left if it's empty or has a smaller sum (ties go to left)
+     
+     if(left == NULL || leftSum <= rightSum)
+     { 
+         if(left == NULL)
+             left = new node(val);
+         else
+             left->insert(val);
+     }
+     // Add to right otherwise
      else
-       left->insert(val);
-   }
-   // Add to right otherwise
-   else
-   { 
-     if(right == NULL)
-       right = new node(val);
-     else
-       right->insert(val);
-   }
+     { 
+         if(right == NULL)
+             right = new node(val);
+         else
+             right->insert(val);
+     }
  }
  
  /**********************************
@@ -65,15 +70,17 @@
   **********************************/
  int node::sum()
  { 
-   int total = data;
-   
-   // Add sum of left subtree
-   if(left != NULL)
-     total += left->sum();
-   
-   // Add sum of right subtree
-   if(right != NULL)
-     total += right->sum();
-   
-   return total;
+     int total = data;
+     
+     // Add sum of left subtree
+     
+     if(left != NULL)
+         total += left->sum();
+     
+     // Add sum of right subtree
+     
+     if(right != NULL)
+         total += right->sum();
+     
+     return total;
  }
