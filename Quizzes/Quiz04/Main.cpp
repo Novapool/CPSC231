@@ -13,7 +13,7 @@ using namespace std;
 /***********************************
  * Main
  ***********************************/ 
-void main()
+int main()
 { int val;
   string fname;
   fstream f;
@@ -37,4 +37,5 @@ void main()
 // Display
 
   t.display(cout);
+  return 0;
 }
