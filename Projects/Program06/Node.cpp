@@ -100,8 +100,9 @@
      if (Left != nullptr)
          Left->RML(out);
  }
- 
- /***********************************
+
+
+/***********************************
  * depth
  * Return the maximum depth from this node to a leaf node
  * (counting edges, not nodes)
@@ -122,23 +123,23 @@ int node::depth()
     // Return the maximum of left and right depths
     return (leftDepth > rightDepth) ? leftDepth : rightDepth;
 }
- 
- /***********************************
-  * count
-  * Count the number of nodes in this subtree (including this node)
-  ***********************************/
- int node::count()
- {
-     int total = 1;           // Start with 1 for this node
-     
-     // Add count of left subtree if it exists
-     if (Left != nullptr)
-         total += Left->count();
-     
-     // Add count of right subtree if it exists
-     if (Right != nullptr)
-         total += Right->count();
-     
-     // Return the total count
-     return total;
- }
+
+/***********************************
+ * count
+ * Count the number of nodes in this subtree (including this node)
+ ***********************************/
+int node::count()
+{
+    int total = 1;           // Start with 1 for this node
+    
+    // Add count of left subtree if it exists
+    if (Left != nullptr)
+        total += Left->count();
+    
+    // Add count of right subtree if it exists
+    if (Right != nullptr)
+        total += Right->count();
+    
+    // Return the total count
+    return total;
+}
