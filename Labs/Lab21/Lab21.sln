@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{95ED20FB-BFBB-4B67-9A05-EB43E6CA9A76}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab21", "Lab21.vcxproj", "{022649F0-2258-49DD-B359-625747A6BA3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{022649F0-2258-49DD-B359-625747A6BA3A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{022649F0-2258-49DD-B359-625747A6BA3A}.Debug|Win32.Build.0 = Debug|Win32
+		{022649F0-2258-49DD-B359-625747A6BA3A}.Release|Win32.ActiveCfg = Release|Win32
+		{022649F0-2258-49DD-B359-625747A6BA3A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{022649F0-2258-49DD-B359-625747A6BA3A} = {95ED20FB-BFBB-4B67-9A05-EB43E6CA9A76}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43A14E88-47BE-4FD6-93D0-0D96158A4EDF}
+	EndGlobalSection
+EndGlobal
