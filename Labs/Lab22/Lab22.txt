@@ -1,0 +1,12 @@
+Sunday     Monday     10
+Sunday     Tuesday    20
+Monday     Thursday   30
+Tuesday    Friday     30
+Wednesday  Monday     20
+Wednesday  Tuesday    10
+Thursday   Sunday     50
+Friday     Sunday     60
+Thursday   Wednesday  10
+Friday     Wednesday  20
+Thursday   Saturday   20
+Friday     Saturday   10
