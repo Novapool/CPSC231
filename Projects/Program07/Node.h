@@ -1,6 +1,7 @@
 /***********************************
  * Node.h
  * Written by Josh Lamb
+ * All functions implmented by Josh Lamb
  ***********************************/
 
  #ifndef NODE_H

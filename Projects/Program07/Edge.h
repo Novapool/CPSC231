@@ -1,6 +1,7 @@
 /************************************
  * Edge.h
  * Written by Faith Thomson
+ * All functions implmented by Faith Thomson
  ************************************/
 
  #ifndef EDGE_H
