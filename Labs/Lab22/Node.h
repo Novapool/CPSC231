@@ -13,12 +13,13 @@
 
 class node
 { public:
-    node();                  // Constructor
-    void set_value(string);  // Set string value
-    string get_value();      // Return string value
-    void connect(node *);    // Connect this node to another
-    void put(ostream &);     // Output node and neighbors
+    node();                      // Constructor
+    void set_value(string);      // Set string value
+    string get_value();          // Return string value
+    void connect(node *, int);   // Connect this node to another with distance
+    void put();                  // Output node and neighbors
   private:
-    string value;            // Node value
-    node *edge[EDGE_MAX];    // Edges array
+    string value;                // Node value
+    node *edge[EDGE_MAX];        // Edges array
+    int distance[EDGE_MAX];      // Distance array for storing distances
 };

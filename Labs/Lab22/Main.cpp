@@ -1,6 +1,6 @@
 /************************************
  * Lab22.cpp
- * Written by YOUR NAME GOES HERE
+ * Written by Laith Assaf
  ************************************/
 #include <iostream>
 #include <iomanip>
@@ -42,10 +42,45 @@ int main()
 // Add to array 
 
       if(in.good())
-        { cout << setw(12) << source_name;
-          cout << setw(12) << target_name;
-          cout << setw(4) << distance;
-          cout << endl;
+        { 
+          // Find source node or add it if it doesn't exist
+          source_index = -1;
+          for(i=0; i<n; i++)
+            { 
+              if(map[i].get_value() == source_name)
+                { 
+                  source_index = i;
+                  break;
+                }
+            }
+          
+          if(source_index == -1)
+            { 
+              map[n].set_value(source_name);
+              source_index = n;
+              n++;
+            }
+          
+          // Find target node or add it if it doesn't exist
+          target_index = -1;
+          for(i=0; i<n; i++)
+            { 
+              if(map[i].get_value() == target_name)
+                { 
+                  target_index = i;
+                  break;
+                }
+            }
+          
+          if(target_index == -1)
+            { 
+              map[n].set_value(target_name);
+              target_index = n;
+              n++;
+            }
+          
+          // Connect the nodes
+          map[source_index].connect(&map[target_index], distance);
         }; 
     };
  
@@ -55,8 +90,8 @@ int main()
 
 // Display array
 
-  for(i=0;i<n;i++)
-    cout << map[i].get_value() << endl;
+  for(i=0; i<n; i++)
+    map[i].put();
 
 // Success
 
