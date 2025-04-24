@@ -1,7 +1,7 @@
-/***********************************************
+/***********************************
  * Graph.h
  * Written by Laith
- ***********************************************/
+ ***********************************/ 
 
  #ifndef GRAPH_H
  #define GRAPH_H
@@ -13,73 +13,67 @@
  
  // Graph class declaration
  class graph
- {
+ { 
  private:
-     // Head pointer to the first node in the linked list of nodes
+     // Pointer to the first node in the linked list of nodes
      node* Head;
-     
+ 
      // Pointer to the array of edges
      edge* Edges;
-     
-     // Size of edge list (number of edges)
-     int EdgeSize;
-     
-     // Capacity of edge array
-     int EdgeCapacity;
-     
-     // Find a node by value, return NULL if not found
-     // Implemented by: [Group member name]
+ 
+     // Counter for the current number of edges
+     int count;
+ 
+     // Capacity of the edge array
+     int capacity;
+ 
+     // Find a node with a given value, returns NULL if not found
      node* find_node(std::string value);
-     
-     // Insert a new node with given value
-     // Implemented by: [Group member name]
+ 
+     // Insert a new node into the linked list
      node* insert_node(std::string value);
-     
-     // Resize edge array when necessary
-     // Implemented by: [Group member name]
+ 
+     // Resize the edge array when it reaches capacity
      void resize_edges();
-     
-     // Clear visit flags on all nodes
-     // Implemented by: [Group member name]
+ 
+     // Clear all visit flags in the node list
      void clear_visits();
-     
-     // Find the next unvisited node to visit in path algorithm
-     // Implemented by: [Group member name]
-     node* find_next(node* current);
+ 
+     // Recursive function to traverse the graph in depth-first order
+     void depth_traverse(std::ostream& out, node* current);
+ 
+     // Helper function to find the shortest unvisited path
+     edge* find_shortest_edge(node* current);
  
  public:
-     // Constructor - Initialize graph with empty node list and edge array of 4 elements
-     // Implemented by: [Group member name]
+     // Constructor - Initialize the graph with an empty node list
+     // and an edge array of 4 elements
      graph();
-     
-     // Destructor - Delete node list and edge array
-     // Implemented by: [Group member name]
-     ~graph();
-     
-     // Insert an edge into the graph
-     // If source or target nodes don't exist, add them to the node list
-     // Implemented by: [Group member name]
-     void insert(std::string source, std::string target, int weight);
-     
-     // Display the list of nodes and their edges
-     // Implemented by: [Group member name]
-     void show(std::ostream& out);
-     
-     // Display the values of a depth-first search starting from given node
-     // Implemented by: [Group member name]
-     void depth(std::ostream& out, std::string start);
-     
-     // Display the values of a breadth-first search starting from given node
-     // Implemented by: [Group member name]
-     void breadth(std::ostream& out, std::string start);
-     
-     // Display the path from start node to finish node using greedy shortest edge algorithm
-     // Implemented by: [Group member name]
-     void path(std::ostream& out, std::string start, std::string finish);
  
-     // Friend classes
-     friend class node;
-     friend class edge;
+     // Destructor - Delete the node list and edge array
+     ~graph();
+ 
+     // Insert an edge into the graph
+     // Takes three parameters: source node value, target node value,
+     // and weight of the edge
+     // If either node does not exist, it will be added to the node list
+     void insert(std::string source, std::string target, int weight);
+ 
+     // Display the list of nodes and their edges
+     void show(std::ostream& out);
+ 
+     // Display the values of a depth-first search
+     // Takes two parameters: output stream and start node value
+     void depth(std::ostream& out, std::string start);
+ 
+     // Display the values of a breadth-first search
+     // Takes two parameters: output stream and start node value
+     void breadth(std::ostream& out, std::string start);
+ 
+     // Display the path from start node to finish node
+     // Takes three parameters: output stream, start node value, finish node value
+     // Uses the greedy shortest edge first method
+     void path(std::ostream& out, std::string start, std::string finish);
  };
  
  #endif // GRAPH_H
