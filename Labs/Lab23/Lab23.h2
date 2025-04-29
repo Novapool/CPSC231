@@ -1,0 +1,17 @@
+// Lab 23 Cities and Distances
+
+#define CITY_MAX  8
+
+int map[CITY_MAX][CITY_MAX] =
+{ {  0,53,80,34, 75,35, 0, 85 },
+  { 53, 0,77, 0,  0, 0, 0, 94 },
+  { 80,77, 0,68,  0, 0, 0,  0 },
+  { 34, 0,68, 0,  0,30, 0,  0 },
+  { 75, 0, 0, 0,  0, 0,59,109 },
+  { 35, 0, 0,30,  0, 0,47,  0 },
+  {  0, 0, 0, 0, 59,47, 0,  0 },
+  { 85,94, 0, 0,109, 0, 0,  0 }
+};
+
+string city[CITY_MAX] =
+{ "Lansing","Flint","Detroit","Jackson","Grand Rapids","Battle Creek","Kalamazoo","Clare" };
