@@ -137,7 +137,7 @@ void findPath(int start, int stop)
       // No path found, we're stuck
       
       cout << "Can't get there from here" << endl;
-      pos = CITY_MAX;  // Set pos to exit the loop instead of using break
+      pos = CITY_MAX;  // Set pos to exit the loop 
     };
   };
 
