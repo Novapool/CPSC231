@@ -8,6 +8,7 @@
 
  /******************************
   * node default constructor
+  * Implemented by Josh Lamb
   ******************************/
  node::node()
  {
@@ -18,6 +19,7 @@
  
  /*******************************
   * node constructor with string value
+  * Implemented by Josh Lamb
   ******************************/
  node::node(string value)
  {
@@ -29,6 +31,7 @@
  /******************************
   * node destructor
   * delete any following nodes
+  * Implemented by Josh Lamb
   ******************************/
  node::~node()
  {

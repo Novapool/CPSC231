@@ -10,6 +10,7 @@
  /******************************
   * edge constructor
   * Creates an edge with pointers to source and target nodes, and distance
+  * Implemented by Faith Thomson
   ******************************/
  edge::edge(node* src, node* tgt, int distance)
  {

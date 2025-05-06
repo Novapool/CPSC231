@@ -12,6 +12,7 @@
  /******************************
   * graph constructor
   * Initialize the graph with an empty node list and edge array of 4 elements
+  * Implemented by Laith Assaf
   ******************************/
  graph::graph()
  {
@@ -30,6 +31,7 @@
  /******************************
   * graph destructor
   * Delete the node list and edge array
+  * Implemented by Laith Assaf
   ******************************/
  graph::~graph()
  {
@@ -49,6 +51,7 @@
  /******************************
   * find_node
   * Find a node with a given value, returns nullptr if not found
+  * Implemented by Josh Lamb
   ******************************/
  node* graph::find_node(std::string value)
  {
@@ -75,6 +78,7 @@
  /******************************
   * insert_node
   * Insert a new node into the linked list
+  * Implemented by Josh Lamb
   ******************************/
  node* graph::insert_node(std::string value)
  {
@@ -104,6 +108,7 @@
  /******************************
   * resize_edges
   * Resize the edge array when it reaches capacity
+  * Implemented by Laith Assaf
   ******************************/
  void graph::resize_edges()
  {
@@ -139,6 +144,7 @@
  /******************************
   * clear_visits
   * Clear all visit flags in the node list
+  * Implemented by Josh Lamb
   ******************************/
  void graph::clear_visits()
  {
@@ -156,6 +162,7 @@
  /******************************
   * find_shortest_edge
   * Helper function to find the shortest unvisited path
+  * Implemented by Laith Assaf
   ******************************/
  edge* graph::find_shortest_edge(node* current)
  {
@@ -185,6 +192,7 @@
   * Insert an edge into the graph
   * Takes three parameters: source node value, target node value, and weight of the edge
   * If either node does not exist, it will be added to the node list
+  * Implemented by Josh Lamb
   ******************************/
  void graph::insert(std::string source, std::string target, int weight)
  {
@@ -216,6 +224,7 @@
  /******************************
   * show
   * Display the list of nodes and their edges
+  * Implemented by Laith Assaf
   ******************************/
  void graph::show(std::ostream& out)
  {
@@ -254,35 +263,32 @@
   * depth
   * Display the values of a depth-first search
   * Takes two parameters: output stream and start node value
-  * 
-  * 
+  * Implemented by Faith Thomson
   ******************************/
  void graph::depth(std::ostream& out, std::string start)
  {
-    
+     
  }
  
  /******************************
   * depth_traverse
   * Recursive function to traverse the graph in depth-first order
-  * 
-  * 
+  * Implemented by Faith Thomson
   ******************************/
  void graph::depth_traverse(std::ostream& out, node* current)
  {
-    
+     
  }
  
  /******************************
   * breadth
   * Display the values of a breadth-first search
   * Takes two parameters: output stream and start node value
-  * 
-  * 
+  * Implemented by Faith Thomson
   ******************************/
  void graph::breadth(std::ostream& out, std::string start)
  {
-    
+     
  }
  
  /******************************
@@ -290,10 +296,9 @@
   * Display the path from start node to finish node
   * Takes three parameters: output stream, start node value, finish node value
   * Uses the greedy shortest edge first method
-  * 
-  * 
+  * Implemented by Faith Thomson
   ******************************/
  void graph::path(std::ostream& out, std::string start, std::string finish)
  {
-    
+     
  }
