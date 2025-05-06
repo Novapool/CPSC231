@@ -267,7 +267,28 @@
   ******************************/
  void graph::depth(std::ostream& out, std::string start)
  {
+     // Find the start node
+     node* startNode = find_node(start);
      
+     // If start node not found, return
+     if (startNode == nullptr)
+     {
+         out << "Node " << start << " not found" << std::endl;
+         return;
+     }
+     
+     // Clear all visit flags
+     clear_visits();
+     
+     // Output header
+     out << "Depth List" << std::endl;
+     out << "---------------" << std::endl;
+     
+     // Start recursion from the start node
+     depth_traverse(out, startNode);
+     
+     // Add a newline at the end
+     out << std::endl;
  }
  
  /******************************
@@ -277,7 +298,22 @@
   ******************************/
  void graph::depth_traverse(std::ostream& out, node* current)
  {
+     // Mark current node as visited
+     current->visit = true;
      
+     // Output the current node value
+     out << current->value << " ";
+     
+     // Visit all unvisited neighbors
+     for (int i = 0; i < count; i++)
+     {
+         // If this edge starts at the current node and target not visited
+         if (Edges[i]->source == current && !Edges[i]->target->visit)
+         {
+             // Recursively visit the target node
+             depth_traverse(out, Edges[i]->target);
+         }
+     }
  }
  
  /******************************
@@ -288,7 +324,62 @@
   ******************************/
  void graph::breadth(std::ostream& out, std::string start)
  {
+     // Find the start node
+     node* startNode = find_node(start);
      
+     // If start node not found, return
+     if (startNode == nullptr)
+     {
+         out << "Node " << start << " not found" << std::endl;
+         return;
+     }
+     
+     // Clear all visit flags
+     clear_visits();
+     
+     // Create a queue for BFS
+     std::queue<node*> nodeQueue;
+     
+     // Mark start node as visited and enqueue it
+     startNode->visit = true;
+     nodeQueue.push(startNode);
+     
+     // Output header
+     out << "Breadth List" << std::endl;
+     out << "---------------" << std::endl;
+     
+     // Process the queue until it's empty
+     while (!nodeQueue.empty())
+     {
+         // Dequeue a node
+         node* current = nodeQueue.front();
+         nodeQueue.pop();
+         
+         // Output the current node value
+         out << current->value << " ";
+         
+         // Visit all unvisited neighbors
+         for (int i = 0; i < count; i++)
+         {
+             // If this edge starts at the current node
+             if (Edges[i]->source == current)
+             {
+                 // Get the target node
+                 node* target = Edges[i]->target;
+                 
+                 // If target not visited
+                 if (!target->visit)
+                 {
+                     // Mark as visited and enqueue
+                     target->visit = true;
+                     nodeQueue.push(target);
+                 }
+             }
+         }
+     }
+     
+     // Add a newline at the end
+     out << std::endl;
  }
  
  /******************************
@@ -300,5 +391,70 @@
   ******************************/
  void graph::path(std::ostream& out, std::string start, std::string finish)
  {
+     // Find the start and finish nodes
+     node* startNode = find_node(start);
+     node* finishNode = find_node(finish);
      
+     // If either node not found, return
+     if (startNode == nullptr || finishNode == nullptr)
+     {
+         out << "Node not found" << std::endl;
+         return;
+     }
+     
+     // Clear all visit flags
+     clear_visits();
+     
+     // Output header
+     out << "Path" << std::endl;
+     out << "---------------" << std::endl;
+     
+     // Create variables to track the path
+     node* current = startNode;
+     int totalWeight = 0;
+     bool pathFound = false;
+     
+     // Mark start node as visited
+     current->visit = true;
+     
+     // Loop until we reach the finish node or run out of paths
+     while (current != finishNode)
+     {
+         // Find the shortest unvisited edge from current node
+         edge* shortestEdge = find_shortest_edge(current);
+         
+         // If no unvisited edge found, path is not possible
+         if (shortestEdge == nullptr)
+         {
+             break;
+         }
+         
+         // Output the edge information
+         out << shortestEdge->source->value << " to " 
+             << shortestEdge->target->value << " = " 
+             << shortestEdge->weight << std::endl;
+         
+         // Update total weight
+         totalWeight += shortestEdge->weight;
+         
+         // Move to the target node and mark it as visited
+         current = shortestEdge->target;
+         current->visit = true;
+         
+         // Check if we've reached the finish node
+         if (current == finishNode)
+         {
+             pathFound = true;
+         }
+     }
+     
+     // Output the result
+     if (pathFound)
+     {
+         out << "Total = " << totalWeight << std::endl;
+     }
+     else
+     {
+         out << "No path found" << std::endl;
+     }
  }
