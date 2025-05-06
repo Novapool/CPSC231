@@ -228,6 +228,9 @@
   ******************************/
  void graph::show(std::ostream& out)
  {
+     // Add newline before output
+     out << endl;
+     
      // Start at the head of the list
      node* current = Head;
      
@@ -235,7 +238,7 @@
      while (current != nullptr)
      {
          // Output the node value
-         out << "Node " << current->value << std::endl;
+         out << "Node " << current->value << endl;
          
          // Find all edges that start from this node
          for (int i = 0; i < count; i++)
@@ -244,18 +247,15 @@
              {
                  // Output the edge information
                  out << "  Edge " << Edges[i]->target->value 
-                     << " " << Edges[i]->weight << std::endl;
+                     << " " << Edges[i]->weight << endl;
              }
          }
          
          // Move to next node
          current = current->next;
          
-         // Add a blank line between nodes (except after the last node)
-         if (current != nullptr)
-         {
-             out << std::endl;
-         }
+         // Add a blank line between nodes
+         out << endl;
      }
  }
  
@@ -267,13 +267,16 @@
   ******************************/
  void graph::depth(std::ostream& out, std::string start)
  {
+     // Add newline before output
+     out << endl;
+     
      // Find the start node
      node* startNode = find_node(start);
      
      // If start node not found, return
      if (startNode == nullptr)
      {
-         out << "Node " << start << " not found" << std::endl;
+         out << "Node " << start << " not found" << endl;
          return;
      }
      
@@ -281,14 +284,14 @@
      clear_visits();
      
      // Output header
-     out << "Depth List" << std::endl;
-     out << "---------------" << std::endl;
+     out << "Depth List" << endl;
+     out << "----------------" << endl;
      
      // Start recursion from the start node
      depth_traverse(out, startNode);
      
      // Add a newline at the end
-     out << std::endl;
+     out << endl << endl;
  }
  
  /******************************
@@ -324,13 +327,16 @@
   ******************************/
  void graph::breadth(std::ostream& out, std::string start)
  {
+     // Add newline before output
+     out << endl;
+     
      // Find the start node
      node* startNode = find_node(start);
      
      // If start node not found, return
      if (startNode == nullptr)
      {
-         out << "Node " << start << " not found" << std::endl;
+         out << "Node " << start << " not found" << endl;
          return;
      }
      
@@ -345,8 +351,8 @@
      nodeQueue.push(startNode);
      
      // Output header
-     out << "Breadth List" << std::endl;
-     out << "---------------" << std::endl;
+     out << "Breadth List" << endl;
+     out << "----------------" << endl;
      
      // Process the queue until it's empty
      while (!nodeQueue.empty())
@@ -378,8 +384,8 @@
          }
      }
      
-     // Add a newline at the end
-     out << std::endl;
+     // Add newlines at the end
+     out << endl << endl;
  }
  
  /******************************
@@ -391,6 +397,9 @@
   ******************************/
  void graph::path(std::ostream& out, std::string start, std::string finish)
  {
+     // Add newline before output
+     out << endl;
+     
      // Find the start and finish nodes
      node* startNode = find_node(start);
      node* finishNode = find_node(finish);
@@ -398,7 +407,7 @@
      // If either node not found, return
      if (startNode == nullptr || finishNode == nullptr)
      {
-         out << "Node not found" << std::endl;
+         out << "Node not found" << endl << endl;
          return;
      }
      
@@ -406,8 +415,8 @@
      clear_visits();
      
      // Output header
-     out << "Path" << std::endl;
-     out << "---------------" << std::endl;
+     out << "Path" << endl;
+     out << "----------------" << endl;
      
      // Create variables to track the path
      node* current = startNode;
@@ -432,7 +441,7 @@
          // Output the edge information
          out << shortestEdge->source->value << " to " 
              << shortestEdge->target->value << " = " 
-             << shortestEdge->weight << std::endl;
+             << shortestEdge->weight << endl;
          
          // Update total weight
          totalWeight += shortestEdge->weight;
@@ -451,10 +460,10 @@
      // Output the result
      if (pathFound)
      {
-         out << "Total = " << totalWeight << std::endl;
+         out << "Total = " << totalWeight << endl << endl;
      }
      else
      {
-         out << "No path found" << std::endl;
+         out << "No path found" << endl << endl;
      }
  }
