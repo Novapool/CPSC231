@@ -243,7 +243,7 @@
              if (Edges[i]->source == current)
              {
                  // Output the edge information
-                 out << "Edge " << Edges[i]->target->value 
+                 out << "  Edge " << Edges[i]->target->value 
                      << " " << Edges[i]->weight << std::endl;
              }
          }
