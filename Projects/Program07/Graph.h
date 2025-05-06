@@ -19,8 +19,8 @@
      // Pointer to the first node in the linked list of nodes
      node* Head;
  
-     // Pointer to the array of edges
-     edge* Edges;
+     // Pointer to the array of edge pointers
+     edge** Edges;
  
      // Counter for the current number of edges
      int count;
