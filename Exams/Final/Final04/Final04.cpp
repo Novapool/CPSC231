@@ -31,12 +31,12 @@ void tree::insert_balanced(string map[], int low, int high)
     return;
   
   // Find the middle element
-  int mid = (low + high) / 2;
+  int mid = low + (high - low) / 2;
   
   // Insert the middle element
   insert(map[mid]);
   
-  // Recursively insert left half first
+  // Recursively insert left half
   insert_balanced(map, low, mid-1);
   
   // Then insert right half
@@ -59,22 +59,22 @@ int tree::dump(string map[])
 
 /*******************************
  * node::dump()
- * Add this node and children to array in reverse order
+ * Add this node and children to array in sorted order
  *******************************/
 int node::dump(string map[], int n)
 { 
   int pos = n;
   
-  // Traverse right subtree first (reverse in-order)
-  if(right != NULL)
-    pos = right->dump(map, pos);
+  // In-order traversal (left-node-right)
+  if(left != NULL)
+    pos = left->dump(map, pos);
   
   // Add this node's value
   map[pos++] = val;
   
-  // Then traverse left subtree
-  if(left != NULL)
-    pos = left->dump(map, pos);
+  // Then traverse right subtree
+  if(right != NULL)
+    pos = right->dump(map, pos);
   
   // Return final position
   return pos;
