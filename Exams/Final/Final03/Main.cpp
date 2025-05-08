@@ -12,7 +12,7 @@ using namespace std;
 /*********************************
  * main()
  *********************************/
-void main()
+int main()
 { string fname,s,start,stop;
   fstream in;
   list a,b,c;
@@ -45,6 +45,7 @@ void main()
   cout << "C = ";
   c.output(cout);
 
+  return 0;
 }
 
 
