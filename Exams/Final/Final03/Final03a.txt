@@ -1,0 +1,9 @@
+Apples
+Bananas
+Grapes
+Lemons
+Oranges
+Peaches
+Pears
+Strawberry
+Watermelon

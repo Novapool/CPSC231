@@ -31,15 +31,17 @@ void tree::insert_balanced(string map[], int low, int high)
     return;
   
   // Find the middle element
-  int mid = low + (high - low) / 2;
+  int mid = (low + high) / 2;
   
   // Insert the middle element
   insert(map[mid]);
   
-  // Recursively insert left half
-  insert_balanced(map, low, mid-1);
   
-  // Then insert right half
+  
+  // Then insert left half 
+  insert_balanced(map, low, mid-1);
+
+  // Recursively insert right half next 
   insert_balanced(map, mid+1, high);
 }
 
