@@ -1,6 +1,7 @@
 /************************************
  * Final 02
  * Written by Laith Assaf
+ * Sources: Chapter Notes 15.03, Quick Sort Algorithm Provided, Lab18
  ************************************/
 #include <iostream>
 using namespace std;
@@ -32,14 +33,14 @@ void quicksort(string map[], int n)
       // Loop while map[pos1] < pivot value and pos1 < pos2
       while(map[pos1] < pivot && pos1 < pos2)
       { 
-        counter_comp++;
+        counter_comp++;                    // Increment comparison counter
         pos1++;
       }
       
       // Loop while map[pos2] ≥ pivot value and pos2 > pos1
       while(map[pos2] >= pivot && pos2 > pos1)
       { 
-        counter_comp++;
+        counter_comp++;                    // Increment comparison counter
         pos2--;
       }
       
@@ -50,7 +51,7 @@ void quicksort(string map[], int n)
         temp = map[pos1];
         map[pos1] = map[pos2];
         map[pos2] = temp;
-        counter_swap++;
+        counter_swap++;                    // Increment swap counter
       }
     }
     
@@ -71,14 +72,14 @@ void quicksort(string map[], int n)
   // Otherwise if N=2 and map[0] > map[1]
   else if(n == 2)
   { 
-    counter_comp++;
+    counter_comp++;                        // Increment comparison counter
     if(map[0] > map[1])
     { 
       // Swap map[0] and map[1]
       temp = map[0];
       map[0] = map[1];
       map[1] = temp;
-      counter_swap++;
+      counter_swap++;                      // Increment swap counter
     }
   }
   // Implicit case: If N<=1, do nothing as the array is already sorted
