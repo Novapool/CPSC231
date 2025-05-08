@@ -18,4 +18,3 @@ class node
     string val;                    // Stored value
     node *left,*right;             // Node pointers
 };
-
